@@ -7,6 +7,27 @@
 
 import UIKit
 
+final class ImagesListViewController: UIViewController {
+    @IBOutlet private var tableView: UITableView!
+    
+    private let photosName: [String] = Array(0..<20).map{ "\($0)" }
+    
+    private lazy var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ru_RU")
+        formatter.dateFormat = "dd MMMM yyyy"
+        return formatter
+    } ()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.backgroundColor = UIColor(named: "YP Black")
+        tableView.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
+    }
+}
 extension ImagesListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -26,25 +47,22 @@ extension ImagesListViewController: UITableViewDelegate {
     }
 }
 
-
-
 extension ImagesListViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return photosName.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: ImagesListCell.reuseIdentifier, for: indexPath)
-            
-            guard let imageListCell = cell as? ImagesListCell else {
-                return UITableViewCell()
-            }
-            
-            configCell(for: imageListCell, with: indexPath)
-            return imageListCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ImagesListCell.reuseIdentifier, for: indexPath)
+        
+        guard let imageListCell = cell as? ImagesListCell else {
+            return UITableViewCell()
         }
-    
-    
+        
+        configCell(for: imageListCell, with: indexPath)
+        return imageListCell
+    }
 }
 
 extension ImagesListViewController {
@@ -54,40 +72,10 @@ extension ImagesListViewController {
         }
         
         cell.cellImage.image = image
-        cell.dateLabel.text = String(dateFormatter.string(from: Date()).dropLast(2))
+        cell.dateLabel.text = dateFormatter.string(from: Date())
         
         let isLiked = indexPath.row % 2 == 0
         let likeImage = isLiked ? UIImage(named: "likeButtonOn") : UIImage(named: "likeButtonOff")
         cell.likeButton.setImage(likeImage, for: .normal)
     }
 }
-
-
-final class ImagesListViewController: UIViewController {
-    @IBOutlet private var tableView: UITableView!
-    
-    private let photosName: [String] = Array(0..<20).map{ "\($0)" }
-    
-    private lazy var dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "ru_RU")
-        formatter.dateStyle = .long
-        formatter.timeStyle = .none
-        return formatter
-    } ()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.backgroundColor = UIColor(named: "YP Black")
-        tableView.rowHeight = 370
-        tableView.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
-    }
-
-
-}
-
