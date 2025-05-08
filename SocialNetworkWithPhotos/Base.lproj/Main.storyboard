@@ -139,10 +139,14 @@
                                 </subviews>
                                 <viewLayoutGuide key="contentLayoutGuide" id="x3E-aa-rs9"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="E0i-i1-cN1"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Dua-Kc-S6P" id="6xV-hI-BcD"/>
+                                </connections>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6t0-55-VMG">
                                 <rect key="frame" x="16" y="59" width="25" height="48"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="M8F-ca-cYa"/>
                                     <constraint firstAttribute="height" constant="48" id="mSZ-Mh-wd3"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -151,16 +155,30 @@
                                     <action selector="didTapBackButton" destination="Dua-Kc-S6P" eventType="touchUpInside" id="Mdy-sW-xKl"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcg-2N-lew">
+                                <rect key="frame" x="171.66666666666666" y="751" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="7uc-LQ-O7N"/>
+                                    <constraint firstAttribute="width" constant="50" id="KhM-c5-BuU"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="shareButton"/>
+                                <connections>
+                                    <action selector="didTapShareButton:" destination="Dua-Kc-S6P" eventType="touchUpInside" id="CWH-tP-Y9a"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3ZP-jD-JWg"/>
                         <color key="backgroundColor" name="YP Black"/>
                         <color key="tintColor" name="YP White"/>
                         <constraints>
+                            <constraint firstItem="3ZP-jD-JWg" firstAttribute="bottom" secondItem="lcg-2N-lew" secondAttribute="bottom" constant="17" id="6Yv-LM-apF"/>
                             <constraint firstItem="ecf-2f-Qex" firstAttribute="trailing" secondItem="3ZP-jD-JWg" secondAttribute="trailing" id="KJI-Wg-bJr"/>
                             <constraint firstItem="6t0-55-VMG" firstAttribute="leading" secondItem="3ZP-jD-JWg" secondAttribute="leading" constant="8" id="Ssl-zd-E3l"/>
+                            <constraint firstItem="lcg-2N-lew" firstAttribute="centerX" secondItem="3ZP-jD-JWg" secondAttribute="centerX" id="ZN1-OJ-Omq"/>
                             <constraint firstItem="6t0-55-VMG" firstAttribute="top" secondItem="3ZP-jD-JWg" secondAttribute="top" constant="8" id="ab0-Tw-oeO"/>
-                            <constraint firstItem="ecf-2f-Qex" firstAttribute="bottom" secondItem="3ZP-jD-JWg" secondAttribute="bottom" id="cxi-fK-gdR"/>
-                            <constraint firstItem="3ZP-jD-JWg" firstAttribute="top" secondItem="ecf-2f-Qex" secondAttribute="top" id="fkg-md-kK5"/>
+                            <constraint firstItem="ecf-2f-Qex" firstAttribute="bottom" secondItem="1jC-x7-N3Z" secondAttribute="bottom" id="cxi-fK-gdR"/>
+                            <constraint firstAttribute="top" secondItem="ecf-2f-Qex" secondAttribute="top" id="fkg-md-kK5"/>
                             <constraint firstItem="3ZP-jD-JWg" firstAttribute="leading" secondItem="ecf-2f-Qex" secondAttribute="leading" id="zZs-7g-5lL"/>
                         </constraints>
                     </view>
@@ -255,6 +273,7 @@
         <image name="Photo" width="70" height="70"/>
         <image name="logOutButton" width="44" height="44"/>
         <image name="nav_back_white_button" width="24" height="24"/>
+        <image name="shareButton" width="50" height="50"/>
         <image name="tab_editorial_active" width="30" height="30"/>
         <image name="tab_profile_active" width="30" height="30"/>
         <namedColor name="YP Black">
