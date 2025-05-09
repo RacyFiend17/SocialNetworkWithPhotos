@@ -164,7 +164,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="shareButton"/>
                                 <connections>
-                                    <action selector="didTapShareButton:" destination="Dua-Kc-S6P" eventType="touchUpInside" id="CWH-tP-Y9a"/>
+                                    <action selector="didTapShareButton:" destination="Dua-Kc-S6P" eventType="touchUpInside" id="PHs-3D-et7"/>
                                 </connections>
                             </button>
                         </subviews>
