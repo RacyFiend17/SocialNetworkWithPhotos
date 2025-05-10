@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		3F50763B2DCF92630091AF2F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F50763A2DCF92630091AF2F /* WebKit.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		3FCF956D2D6A6FAD00A091F6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F50763A2DCF92630091AF2F /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		3FCF95562D6A6FAC00A091F6 /* SocialNetworkWithPhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialNetworkWithPhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FCF956C2D6A6FAD00A091F6 /* SocialNetworkWithPhotosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialNetworkWithPhotosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FCF95762D6A6FAD00A091F6 /* SocialNetworkWithPhotosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialNetworkWithPhotosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F50763B2DCF92630091AF2F /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,12 +91,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F5076392DCF92620091AF2F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F50763A2DCF92630091AF2F /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3FCF954D2D6A6FAC00A091F6 = {
 			isa = PBXGroup;
 			children = (
 				3FCF95582D6A6FAC00A091F6 /* SocialNetworkWithPhotos */,
 				3FCF956F2D6A6FAD00A091F6 /* SocialNetworkWithPhotosTests */,
 				3FCF95792D6A6FAD00A091F6 /* SocialNetworkWithPhotosUITests */,
+				3F5076392DCF92620091AF2F /* Frameworks */,
 				3FCF95572D6A6FAC00A091F6 /* Products */,
 			);
 			sourceTree = "<group>";
