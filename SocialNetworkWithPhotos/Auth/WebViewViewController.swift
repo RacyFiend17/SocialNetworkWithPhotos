@@ -4,6 +4,7 @@ import UIKit
 
 final class WebViewViewController: UIViewController {
     weak var delegate: WebViewViewControllerDelegate?
+    @IBOutlet private var progressView: UIProgressView!
     @IBOutlet private var webView: WKWebView!
     enum WebViewConstants {
         static let unsplashAuthorizeURLString = "https://unsplash.com/oauth/authorize"
@@ -13,6 +14,8 @@ final class WebViewViewController: UIViewController {
         super.viewDidLoad()
         loadAuthView()
         webView.navigationDelegate = self
+        progressView.progress = 0.5
+        progressView.progressTintColor = UIColor(named: "YP Black")
     }
     
     private func loadAuthView() {

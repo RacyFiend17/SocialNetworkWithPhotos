@@ -260,6 +260,9 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3ak-S2-msZ">
+                                <rect key="frame" x="0.0" y="162" width="393" height="4"/>
+                            </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cI1-Km-f32"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -267,17 +270,21 @@
                             <constraint firstItem="cI1-Km-f32" firstAttribute="trailing" secondItem="jKb-ft-28w" secondAttribute="trailing" id="0Dm-kR-o4L"/>
                             <constraint firstAttribute="bottom" secondItem="jKb-ft-28w" secondAttribute="bottom" id="U2a-uu-lWJ"/>
                             <constraint firstItem="jKb-ft-28w" firstAttribute="top" secondItem="cI1-Km-f32" secondAttribute="top" id="X8o-rc-icB"/>
+                            <constraint firstItem="3ak-S2-msZ" firstAttribute="leading" secondItem="cI1-Km-f32" secondAttribute="leading" id="h4N-jq-Ne7"/>
+                            <constraint firstItem="cI1-Km-f32" firstAttribute="trailing" secondItem="3ak-S2-msZ" secondAttribute="trailing" id="oRT-Ww-VmJ"/>
+                            <constraint firstItem="3ak-S2-msZ" firstAttribute="top" secondItem="cI1-Km-f32" secondAttribute="top" id="s36-uo-g9f"/>
                             <constraint firstItem="jKb-ft-28w" firstAttribute="leading" secondItem="1TF-63-QB3" secondAttribute="leading" id="x65-7r-zNH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ucn-98-NCq"/>
                     <connections>
+                        <outlet property="progressView" destination="3ak-S2-msZ" id="e36-Hx-cW6"/>
                         <outlet property="webView" destination="jKb-ft-28w" id="oHG-Mz-DYF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GTA-GQ-Abv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="880" y="868"/>
+            <point key="canvasLocation" x="878.62595419847321" y="867.6056338028169"/>
         </scene>
         <!--Profile-->
         <scene sceneID="QIu-Ec-QJZ">
